@@ -9,7 +9,6 @@ from tensorflow.keras import layers, models
 # local4 全连接层 2
 # softmax 全连接层 3
 
-
 def inference(input_shape, n_classes):
     model = models.Sequential()
 
