@@ -44,13 +44,11 @@ def inference(input_shape, n_classes):
 
     return model
 
-
 # 计算模型的损失，SparseCategoricalCrossentropy是一个用于多分类问题的损失函数，适用于标签是整数的情况
 def losses(logits, labels):
     loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
     loss = loss_fn(labels, logits)
     return loss
-
 
 # 定义模型的训练过程
 def trainning(model, loss, learning_rate):
@@ -59,7 +57,6 @@ def trainning(model, loss, learning_rate):
     # compile: 编译模型，指定优化器、损失函数和评估指标（准确率）
     model.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
     return model
-
 
 # 评估模型的性能
 def evaluation(model, images, labels):
